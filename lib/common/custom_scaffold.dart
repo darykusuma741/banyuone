@@ -1,15 +1,23 @@
 import 'package:banyuone/common/static/colors_name.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomScaffold extends StatelessWidget {
-  const CustomScaffold({super.key, this.body});
+  const CustomScaffold({super.key, this.body, this.light = false});
   final Widget? body;
+  final bool light;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorsName.white,
-      body: body,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: light ? Brightness.light : Brightness.dark,
+      ),
+      child: Scaffold(
+        backgroundColor: ColorsName.white,
+        body: body,
+      ),
     );
   }
 }
