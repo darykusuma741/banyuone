@@ -16,7 +16,7 @@ class HomeHeader extends GetView<HomeController> {
       width: double.infinity,
       // height: 99.0,
       decoration: BoxDecoration(color: ColorsName.white),
-      padding: EdgeInsets.only(top: 30.h, bottom: 12.h, right: 16.w, left: 16.w),
+      padding: EdgeInsets.only(top: 35.h, bottom: 12.h, right: 16.w, left: 16.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

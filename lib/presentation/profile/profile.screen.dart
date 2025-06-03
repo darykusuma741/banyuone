@@ -16,7 +16,7 @@ class ProfileScreen extends GetView<ProfileController> {
         // title: const Text('ProfileScreen'),
         // centerTitle: true,
       ),
-      backgroundColor: ColorsName.darkBlueGray,
+      backgroundColor: ColorsName.iceBlue,
       body: const Center(
         child: Text(
           'ProfileScreen is working',
