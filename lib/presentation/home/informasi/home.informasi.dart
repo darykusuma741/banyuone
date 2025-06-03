@@ -15,7 +15,6 @@ class HomeInformasi extends GetView<HomeController> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 16.h),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Text('Informasi', style: BaseText.darkBlueGray.copyWith(fontSize: 14.sp, fontWeight: FontWeight.w600)),
@@ -24,13 +23,13 @@ class HomeInformasi extends GetView<HomeController> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
+              spacing: 8.w,
               children: [
-                SizedBox(width: 16.w),
+                SizedBox(width: 8.w),
                 HomeInformasiItem(
                   title: '3 LAYANAN telah selesai hari ini, 19 Mei 2025',
                   enable: true,
                 ),
-                SizedBox(width: 8.w),
                 HomeInformasiItem(
                   title: '2 LAYANAN telah selesai hari ini, 21 Mei 2025',
                   enable: false,
@@ -57,7 +56,7 @@ class HomeInformasiItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       margin: EdgeInsets.symmetric(vertical: 10.0),
       decoration: BoxDecoration(color: enable ? ColorsName.darkBlueGray : Colors.white, borderRadius: BorderRadius.circular(16.r), boxShadow: [
-        BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 12.r),
+        BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5.r),
       ]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

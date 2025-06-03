@@ -3,6 +3,7 @@ import 'package:banyuone/common/static/base_text.dart';
 import 'package:banyuone/common/static/colors_name.dart';
 import 'package:banyuone/presentation/home/header/home.header.dart';
 import 'package:banyuone/presentation/home/informasi/home.informasi.dart';
+import 'package:banyuone/presentation/home/menu/home.menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -51,8 +52,10 @@ class HomeScreen extends GetView<HomeController> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 6.h),
+                  SizedBox(height: 16.h),
                   HomeInformasi(),
+                  SizedBox(height: 13.h),
+                  HomeMenu(),
                 ],
               ),
             ),

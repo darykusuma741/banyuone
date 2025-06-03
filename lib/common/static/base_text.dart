@@ -11,4 +11,5 @@ class BaseText {
   static TextStyle paleBlue = textStyle.copyWith(color: ColorsName.paleBlue);
   static TextStyle slateGray = textStyle.copyWith(color: ColorsName.slateGray);
   static TextStyle iceBlue = textStyle.copyWith(color: ColorsName.iceBlue);
+  static TextStyle mintGreen = textStyle.copyWith(color: ColorsName.mintGreen);
 }
