@@ -34,6 +34,7 @@ class LoginForm extends GetView<LoginController> {
             title: 'Login',
             bgColor: ColorsName.darkBlueGray,
             style: BaseText.white.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500),
+            onTap: controller.onHandleLogin,
           ),
           SizedBox(height: 10.h),
           ButtonComponent(
