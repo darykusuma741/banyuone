@@ -40,7 +40,7 @@ class HomeMenu extends GetView<HomeController> {
                 onTap: () => Get.toNamed(Routes.PELAYANAN),
               ),
               HomeMenuItem(
-                title: 'Prol',
+                title: 'Profil',
                 icon: Icons.person_2_sharp,
                 onTap: () => Get.toNamed(Routes.PROFILE),
               ),
