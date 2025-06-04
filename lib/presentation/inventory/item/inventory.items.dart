@@ -1,5 +1,7 @@
 import 'package:banyuone/common/static/base_text.dart';
 import 'package:banyuone/common/static/colors_name.dart';
+import 'package:banyuone/data/model/inventory_item.model.dart';
+import 'package:banyuone/infrastructure/navigation/routes.dart';
 import 'package:banyuone/presentation/inventory/controllers/inventory.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,54 +12,61 @@ class InventoryItems extends GetView<InventoryController> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 15.h,
-      children: [
-        InventoryItem(),
-        InventoryItem(),
-        InventoryItem(),
-        InventoryItem(),
-        InventoryItem(),
-        InventoryItem(),
-        InventoryItem(),
-        InventoryItem(),
-      ],
+    return Obx(
+      () => Column(
+        spacing: 15.h,
+        children: controller.inventoryItemMainCtr.listItem.value.map((e) {
+          return InventoryItem(e);
+        }).toList(),
+      ),
     );
   }
 }
 
 class InventoryItem extends StatelessWidget {
-  const InventoryItem({super.key});
+  const InventoryItem(this.item, {super.key});
+  final InventoryItemModel item;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: 70.0,
-          height: 70.0,
-          decoration: BoxDecoration(
-            color: ColorsName.paleBlue,
-            borderRadius: BorderRadius.circular(10.r),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10.r),
-            child: Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9jqbilkC6dydxcbdbv-r4EfdWufqi6B0_Pw&s',
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        SizedBox(width: 10.w),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return InkWell(
+      onTap: () => Get.toNamed(Routes.INVENTORY_REQUEST, arguments: item),
+      child: Container(
+        color: Colors.white.withOpacity(.0),
+        child: Row(
           children: [
-            Text('Proyektor', style: BaseText.darkBlueGray.copyWith(fontSize: 16.sp, fontWeight: FontWeight.w600)),
-            SizedBox(height: 5.h),
-            Text('Stok: 2'),
+            Container(
+              width: 70.0,
+              height: 70.0,
+              decoration: BoxDecoration(
+                color: ColorsName.paleBlue,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.r),
+                child: (item.photo == null)
+                    ? Center(
+                        child: Text(
+                          'Fotonya Kosong',
+                          textAlign: TextAlign.center,
+                          style: BaseText.darkBlueGray.copyWith(fontSize: 11.sp),
+                        ),
+                      )
+                    : Image.network(item.photo!, fit: BoxFit.cover),
+              ),
+            ),
+            SizedBox(width: 10.w),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(item.namaBarang, style: BaseText.darkBlueGray.copyWith(fontSize: 16.sp, fontWeight: FontWeight.w600)),
+                SizedBox(height: 5.h),
+                Text('Stok: ${item.stok} dari ${item.stokAwal}'),
+              ],
+            )
           ],
-        )
-      ],
+        ),
+      ),
     );
   }
 }
