@@ -66,5 +66,10 @@ class Nav {
       page: () => const InventoryRequestScreen(),
       binding: InventoryRequestControllerBinding(),
     ),
+    GetPage(
+      name: Routes.BANSOS_REQUEST,
+      page: () => const BansosRequestScreen(),
+      binding: BansosRequestControllerBinding(),
+    ),
   ];
 }

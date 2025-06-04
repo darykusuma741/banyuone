@@ -1,4 +1,5 @@
 export 'package:banyuone/infrastructure/navigation/bindings/controllers/bansos.controller.binding.dart';
+export 'package:banyuone/infrastructure/navigation/bindings/controllers/bansos_request.controller.binding.dart'; 
 export 'package:banyuone/infrastructure/navigation/bindings/controllers/home.controller.binding.dart';
 export 'package:banyuone/infrastructure/navigation/bindings/controllers/inventory.controller.binding.dart';
 export 'package:banyuone/infrastructure/navigation/bindings/controllers/inventory_request.controller.binding.dart'; 

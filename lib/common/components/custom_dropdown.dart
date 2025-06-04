@@ -3,7 +3,6 @@ import 'package:banyuone/common/static/image_assets.dart';
 import 'package:banyuone/common/static/scaleocean/base_text.dart';
 import 'package:banyuone/common/static/scaleocean/colors_name.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Widget dropdown custom yang mendukung generic data type T
 class CustomDropdown<T> extends StatefulWidget {
@@ -17,6 +16,7 @@ class CustomDropdown<T> extends StatefulWidget {
   final void Function(T value)? onChanged; // Callback ketika item dipilih
   final Color? borderColor;
   final Color? fillColor;
+  final bool required;
   final TextStyle? labelStyle;
 
   const CustomDropdown({
@@ -32,6 +32,7 @@ class CustomDropdown<T> extends StatefulWidget {
     this.fillColor,
     this.showScroll = false,
     this.labelStyle,
+    this.required = true,
   });
 
   @override
@@ -100,7 +101,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
     final size = renderBox.size; // Ukuran widget
 
     final overlayHeight = MediaQuery.of(context).size.height;
-    final dropdownMaxHeight = 216.h;
+    final dropdownMaxHeight = 216.0;
 
     // Cek apakah dropdown cukup ditampilkan di bawah
     final canShowBelow = position.dy + size.height + dropdownMaxHeight <= overlayHeight;
@@ -140,12 +141,12 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
                     elevation: 4,
                     color: ColorsNameScaleOcean.white,
                     shadowColor: const Color(0x33333A51),
-                    borderRadius: BorderRadius.circular(6.r),
+                    borderRadius: BorderRadius.circular(6.0),
                     child: ConstrainedBox(
                       constraints: BoxConstraints(maxHeight: dropdownMaxHeight),
                       child: ListView.builder(
                         itemCount: widget.items.length,
-                        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
                           final item = widget.items[index];
@@ -160,14 +161,14 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
                               _removeDropdown();
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
+                              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6.r),
+                                borderRadius: BorderRadius.circular(6.0),
                                 color: colorSelect,
                               ),
                               child: Text(
                                 widget.customContent == null ? item.toString() : widget.customContent!(item),
-                                style: BaseTextScaleOcean.grayDarker.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w400),
+                                style: BaseTextScaleOcean.grayDarker.copyWith(fontSize: 13.0, fontWeight: FontWeight.w400),
                               ),
                             ),
                           );
@@ -205,10 +206,10 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
   @override
   Widget build(BuildContext context) {
     // Style teks
-    final styleText = BaseTextScaleOcean.grayDarker.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w400);
-    final styleTextHint = BaseTextScaleOcean.grayMedium.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w400);
-    final labelStyle = widget.labelStyle ?? BaseTextScaleOcean.blueMuted.copyWith(fontSize: 12.sp);
-    final requiredStyle = BaseTextScaleOcean.redCherry.copyWith(fontSize: 12.sp);
+    final styleText = BaseTextScaleOcean.grayDarker.copyWith(fontSize: 13.0, fontWeight: FontWeight.w400);
+    final styleTextHint = BaseTextScaleOcean.grayMedium.copyWith(fontSize: 13.0, fontWeight: FontWeight.w400);
+    final labelStyle = widget.labelStyle ?? BaseTextScaleOcean.blueMuted.copyWith(fontSize: 12.0);
+    final requiredStyle = BaseTextScaleOcean.redCherry.copyWith(fontSize: 11.0, wordSpacing: 0.0);
 
     return CompositedTransformTarget(
       link: _layerLink,
@@ -217,19 +218,20 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
         children: [
           if (widget.label != null)
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(widget.label!, style: labelStyle),
-                Text(' *', style: requiredStyle), // Tanda wajib isi
+                if (widget.required) Text(' *', style: requiredStyle), // Tanda wajib isi
               ],
             ),
-          if (widget.label != null) SizedBox(height: 5.h),
+          if (widget.label != null) SizedBox(height: 5.0),
 
           // Input field
           GestureDetector(
             onTap: _toggleDropdown,
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 11.h),
+              padding: EdgeInsets.symmetric(vertical: 11.0),
               decoration: BoxDecoration(
                 color: widget.fillColor,
                 border: Border.all(
@@ -237,16 +239,16 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
                       ? (isDropdownOpen ? ColorsNameScaleOcean.blueSteel : widget.borderColor ?? ColorsNameScaleOcean.grayPearly)
                       : ColorsNameScaleOcean.redTomato,
                 ),
-                borderRadius: BorderRadius.circular(6.r),
+                borderRadius: BorderRadius.circular(6.0),
               ),
               child: Row(
                 children: [
-                  SizedBox(width: 13.75.w),
+                  SizedBox(width: 13.75),
                   Expanded(
                     child: Row(
                       children: [
-                        if (widget.iconLeftAsset != null) Image.asset(widget.iconLeftAsset!, height: 11.67.h),
-                        SizedBox(width: widget.iconLeftAsset != null ? 8.w : 0),
+                        if (widget.iconLeftAsset != null) Image.asset(widget.iconLeftAsset!, height: 11.67),
+                        SizedBox(width: widget.iconLeftAsset != null ? 8.0 : 0),
                         Expanded(
                           child: Text(
                             widget.customContent == null ? widget.selectedItem?.toString() ?? 'Pilih item' : widget.customContent!(widget.selectedItem),
@@ -258,12 +260,12 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
                       ],
                     ),
                   ),
-                  SizedBox(width: 8.w),
+                  SizedBox(width: 8.0),
                   RotationTransition(
                     turns: _arrowAnimation,
-                    child: Image.asset(ImageAssets.iconChevronRight, height: 5.5.h),
+                    child: Image.asset(ImageAssets.iconChevronRight, height: 5.5),
                   ),
-                  SizedBox(width: 12.w),
+                  SizedBox(width: 12.0),
                 ],
               ),
             ),

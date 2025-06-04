@@ -1,9 +1,6 @@
 import 'package:get/get.dart';
 
 class BansosController extends GetxController {
-  //TODO: Implement BansosController
-
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +16,5 @@ class BansosController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void onHandleSearch() {}
 }
