@@ -38,14 +38,8 @@ class HomeScreen extends GetView<HomeController> {
                           decoration: BoxDecoration(color: ColorsName.white, borderRadius: BorderRadius.circular(8.r)),
                           child: Row(
                             children: [
-                              Text(
-                                'Selamat Datang, ',
-                                style: BaseText.slateGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500),
-                              ),
-                              Text(
-                                'Indra',
-                                style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w700),
-                              ),
+                              Text('Selamat Datang, ', style: BaseText.slateGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500)),
+                              Text('Indra', style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w700)),
                             ],
                           ),
                         ),
