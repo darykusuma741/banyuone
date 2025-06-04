@@ -1,11 +1,12 @@
+import 'package:banyuone/controllers/inventory_item.main.controller.dart';
 import 'package:get/get.dart';
 
 class InventoryController extends GetxController {
-  //TODO: Implement InventoryController
+  InventoryItemMainController inventoryItemMainCtr = Get.put(InventoryItemMainController());
 
-  final count = 0.obs;
   @override
   void onInit() {
+    getData();
     super.onInit();
   }
 
@@ -19,5 +20,7 @@ class InventoryController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void getData() async {
+    await inventoryItemMainCtr.getData();
+  }
 }
