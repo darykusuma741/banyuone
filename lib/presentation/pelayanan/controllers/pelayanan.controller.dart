@@ -1,9 +1,6 @@
 import 'package:get/get.dart';
 
 class PelayananController extends GetxController {
-  //TODO: Implement PelayananController
-
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +16,7 @@ class PelayananController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void onHandleSave() {
+    Get.back();
+  }
 }
