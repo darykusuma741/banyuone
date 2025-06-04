@@ -23,7 +23,6 @@ class Main extends StatelessWidget {
           return GetMaterialApp(
             initialRoute: initialRoute,
             getPages: Nav.routes,
-            // debugShowMaterialGrid: false,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               fontFamily: 'Urbanist',
