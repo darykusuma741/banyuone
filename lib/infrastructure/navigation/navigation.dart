@@ -42,7 +42,7 @@ class Nav {
       binding: ProfileControllerBinding(),
     ),
     GetPage(
-      name: Routes.PELAYANAN
+      name: Routes.PELAYANAN,
       page: () => const PelayananScreen(),
       binding: PelayananControllerBinding(),
     ),
