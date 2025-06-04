@@ -46,7 +46,7 @@ class ProfileForm extends GetView<ProfileController> {
             label: 'Nomor Hp',
             hintText: 'Masukkan Nomor Hp',
           ),
-          SizedBox(height: 15.h),
+          SizedBox(height: 0.h),
           ButtonComponent(
             title: 'Simpan',
             bgColor: ColorsName.darkBlueGray,

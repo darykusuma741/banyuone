@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874565397861",
+    "project_id": "banyuone-28fe9",
+    "storage_bucket": "banyuone-28fe9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874565397861:android:545f36ef46e44adf1d458c",
+        "android_client_info": {
+          "package_name": "com.example.banyuone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZvmBgl49d4Kfw-KGtALVxGa5kjaiplOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

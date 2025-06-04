@@ -5,8 +5,6 @@ import '../../../../presentation/bansos_request/controllers/bansos_request.contr
 class BansosRequestControllerBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<BansosRequestController>(
-      () => BansosRequestController(),
-    );
+    Get.put(BansosRequestController());
   }
 }
