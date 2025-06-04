@@ -1,3 +1,4 @@
+import 'package:banyuone/common/static/scaleocean/base_text.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldComponent extends StatelessWidget {
@@ -16,12 +17,19 @@ class TextFieldComponent extends StatelessWidget {
       borderSide: BorderSide(color: borderColor ?? Colors.white, width: 1.0),
     );
     border = borderColor == null ? null : border;
+    final requiredStyle = BaseTextScaleOcean.redCherry.copyWith(fontSize: 12.0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (label != null) Text(label!, style: styleLabel),
-        if (label != null) SizedBox(height: 8.0),
+        if (label != null)
+          Row(
+            children: [
+              Text(label!, style: styleLabel),
+              Text(' *', style: requiredStyle), // Tanda wajib isi
+            ],
+          ),
+        if (label != null) SizedBox(height: 5.0),
         TextField(
           decoration: InputDecoration(
             filled: true,
