@@ -42,9 +42,19 @@ class Nav {
       binding: ProfileControllerBinding(),
     ),
     GetPage(
-      name: Routes.PROFILE,
-      page: () => const ProfileScreen(),
-      binding: ProfileControllerBinding(),
+      name: Routes.PELAYANAN
+      page: () => const PelayananScreen(),
+      binding: PelayananControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.INVENTORY,
+      page: () => const InventoryScreen(),
+      binding: InventoryControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.BANSOS,
+      page: () => const BansosScreen(),
+      binding: BansosControllerBinding(),
     ),
   ];
 }

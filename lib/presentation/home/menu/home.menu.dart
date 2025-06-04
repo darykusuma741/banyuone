@@ -24,9 +24,21 @@ class HomeMenu extends GetView<HomeController> {
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             children: [
-              HomeMenuItem(title: 'Bansos', icon: Icons.public_rounded),
-              HomeMenuItem(title: 'Inventory', icon: Icons.save),
-              HomeMenuItem(title: 'Pelayanan', icon: Icons.call),
+              HomeMenuItem(
+                title: 'Bansos', 
+                icon: Icons.public_rounded,
+                onTap: () => Get.toNamed(Routes.BANSOS),
+              ),
+              HomeMenuItem(
+                title: 'Inventory', 
+                icon: Icons.save,
+                onTap: () => Get.toNamed(Routes.INVENTORY),
+              ),
+              HomeMenuItem(
+                title: 'Pelayanan',
+                icon: Icons.call,
+                onTap: () => Get.toNamed(Routes.PELAYANAN),
+              ),
               HomeMenuItem(
                 title: 'Profil',
                 icon: Icons.person_2_sharp,
