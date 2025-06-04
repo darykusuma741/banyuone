@@ -17,6 +17,7 @@ class CustomDropdown<T> extends StatefulWidget {
   final void Function(T value)? onChanged; // Callback ketika item dipilih
   final Color? borderColor;
   final Color? fillColor;
+  final bool required;
   final TextStyle? labelStyle;
 
   const CustomDropdown({
@@ -32,6 +33,7 @@ class CustomDropdown<T> extends StatefulWidget {
     this.fillColor,
     this.showScroll = false,
     this.labelStyle,
+    this.required = true,
   });
 
   @override
@@ -219,7 +221,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
             Row(
               children: [
                 Text(widget.label!, style: labelStyle),
-                Text(' *', style: requiredStyle), // Tanda wajib isi
+                if (widget.required) Text(' *', style: requiredStyle), // Tanda wajib isi
               ],
             ),
           if (widget.label != null) SizedBox(height: 5.h),

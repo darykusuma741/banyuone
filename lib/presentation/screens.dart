@@ -1,4 +1,5 @@
 export 'package:banyuone/presentation/bansos/bansos.screen.dart';
+export 'package:banyuone/presentation/bansos_request/bansos_request.screen.dart';
 export 'package:banyuone/presentation/home/home.screen.dart';
 export 'package:banyuone/presentation/inventory/inventory.screen.dart';
 export 'package:banyuone/presentation/inventory_request/inventory_request.screen.dart';

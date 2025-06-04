@@ -26,11 +26,12 @@ class CustomScaffold extends StatelessWidget {
 }
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title, this.bottom, this.backgroundColor, this.divider = true});
+  const CustomAppBar({super.key, required this.title, this.actions, this.bottom, this.backgroundColor, this.divider = true});
   final String title;
   final PreferredSizeWidget? bottom;
   final bool divider;
   final Color? backgroundColor;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +42,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title),
       titleSpacing: 0.0,
       titleTextStyle: TextStyle(fontSize: 15.0, color: Colors.black),
+      actions: actions,
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios_new_outlined,
