@@ -1,9 +1,6 @@
 import 'package:get/get.dart';
 
 class BansosRequestController extends GetxController {
-  //TODO: Implement BansosRequestController
-
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +16,7 @@ class BansosRequestController extends GetxController {
     super.onClose();
   }
 
-  void onHandleSave() {}
+  void onHandleSave() {
+    Get.back();
+  }
 }

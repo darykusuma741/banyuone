@@ -26,13 +26,13 @@ class InventoryScreen extends GetView<InventoryController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 16.h,
           children: [
-            InventoryItems(),
             ButtonComponent(
               title: 'Kelola Inventory',
               bgColor: ColorsName.darkBlueGray,
               style: BaseText.white.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500),
               onTap: () => Get.toNamed(Routes.INVENTORY_REQUEST),
             ),
+            InventoryItems(),
           ],
         ),
       ),

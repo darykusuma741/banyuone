@@ -17,13 +17,14 @@ class TextFieldComponent extends StatelessWidget {
       borderSide: BorderSide(color: borderColor ?? Colors.white, width: 1.0),
     );
     border = borderColor == null ? null : border;
-    final requiredStyle = BaseTextScaleOcean.redCherry.copyWith(fontSize: 12.0);
+    final requiredStyle = BaseTextScaleOcean.redCherry.copyWith(fontSize: 11.0, wordSpacing: 0.0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (label != null)
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(label!, style: styleLabel),
               Text(' *', style: requiredStyle), // Tanda wajib isi
