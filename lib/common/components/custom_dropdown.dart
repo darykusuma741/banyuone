@@ -18,6 +18,7 @@ class CustomDropdown<T> extends StatefulWidget {
   final Color? fillColor;
   final bool required;
   final TextStyle? labelStyle;
+  final TextStyle? styleTextHint;
 
   const CustomDropdown({
     super.key,
@@ -32,6 +33,7 @@ class CustomDropdown<T> extends StatefulWidget {
     this.fillColor,
     this.showScroll = false,
     this.labelStyle,
+    this.styleTextHint,
     this.required = true,
   });
 
@@ -207,7 +209,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> with TickerProvid
   Widget build(BuildContext context) {
     // Style teks
     final styleText = BaseTextScaleOcean.grayDarker.copyWith(fontSize: 13.0, fontWeight: FontWeight.w400);
-    final styleTextHint = BaseTextScaleOcean.grayMedium.copyWith(fontSize: 13.0, fontWeight: FontWeight.w400);
+    final styleTextHint = widget.styleTextHint ?? BaseTextScaleOcean.grayMedium.copyWith(fontSize: 13.0, fontWeight: FontWeight.w400);
     final labelStyle = widget.labelStyle ?? BaseTextScaleOcean.blueMuted.copyWith(fontSize: 12.0);
     final requiredStyle = BaseTextScaleOcean.redCherry.copyWith(fontSize: 11.0, wordSpacing: 0.0);
 

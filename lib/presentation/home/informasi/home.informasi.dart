@@ -34,6 +34,7 @@ class HomeInformasi extends GetView<HomeController> {
                   title: '2 LAYANAN telah selesai hari ini, 21 Mei 2025',
                   enable: false,
                 ),
+                SizedBox(width: 8.w),
               ],
             ),
           ),
@@ -56,7 +57,7 @@ class HomeInformasiItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       margin: EdgeInsets.symmetric(vertical: 10.0),
       decoration: BoxDecoration(color: enable ? ColorsName.darkBlueGray : Colors.white, borderRadius: BorderRadius.circular(16.r), boxShadow: [
-        BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5.r),
+        BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 4.r, offset: Offset(2.0, 4.0)),
       ]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

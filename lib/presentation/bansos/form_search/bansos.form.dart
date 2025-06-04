@@ -14,6 +14,7 @@ class BansosForm extends GetView<BansosController> {
     final styleLabel = BaseText.darkBlueGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500);
     final borderColor = ColorsName.paleBlue;
     final fillColor = ColorsName.lightGray;
+    final hintStyle = BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400);
 
     return Column(
       spacing: 16.h,
@@ -23,6 +24,7 @@ class BansosForm extends GetView<BansosController> {
           fillColor: fillColor,
           labelStyle: styleLabel,
           required: false,
+          styleTextHint: hintStyle,
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'Tahun Priode',
@@ -40,9 +42,10 @@ class BansosForm extends GetView<BansosController> {
           fillColor: fillColor,
           labelStyle: styleLabel,
           required: false,
+          styleTextHint: hintStyle,
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
-          label: 'Rt',
+          label: 'RT',
           items: ['Barang1', 'Barang2'],
           customContent: (p0) => p0 == null ? 'Pilih RT' : '$p0 ',
           onChanged: (value) {
@@ -57,6 +60,7 @@ class BansosForm extends GetView<BansosController> {
           fillColor: fillColor,
           labelStyle: styleLabel,
           required: false,
+          styleTextHint: hintStyle,
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'RW',

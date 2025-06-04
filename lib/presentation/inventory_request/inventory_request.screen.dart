@@ -18,6 +18,7 @@ class InventoryRequestScreen extends GetView<InventoryRequestController> {
     final styleLabel = BaseText.darkBlueGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500);
     final borderColor = ColorsName.paleBlue;
     final fillColor = ColorsName.lightGray;
+    final hintStyle = BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400);
 
     return CustomScaffold(
       appBar: CustomAppBar(
@@ -33,6 +34,7 @@ class InventoryRequestScreen extends GetView<InventoryRequestController> {
               borderColor: borderColor,
               fillColor: fillColor,
               labelStyle: styleLabel,
+              styleTextHint: hintStyle,
               // error: controller.requestTypeErr.value,
               // selectedItem: controller.requestType.value,
               label: 'Pilih Barang',
@@ -49,6 +51,7 @@ class InventoryRequestScreen extends GetView<InventoryRequestController> {
               borderColor: borderColor,
               fillColor: fillColor,
               labelStyle: styleLabel,
+              styleTextHint: hintStyle,
               // error: controller.requestTypeErr.value,
               // selectedItem: controller.requestType.value,
               label: 'Pilih Tindakan',
@@ -66,8 +69,8 @@ class InventoryRequestScreen extends GetView<InventoryRequestController> {
               styleLabel: styleLabel,
               borderColor: ColorsName.paleBlue,
               fillColor: ColorsName.lightGray,
-              hintStyle: BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400),
-              hintText: 'Enter your email',
+              hintStyle: hintStyle,
+              hintText: 'Contoh: 28',
             ),
             ButtonComponent(
               title: 'Simpan',

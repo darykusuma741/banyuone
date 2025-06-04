@@ -14,6 +14,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
     final styleLabel = BaseText.darkBlueGray.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500);
     final borderColor = ColorsName.paleBlue;
     final fillColor = ColorsName.lightGray;
+    final hintStyle = BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400);
 
     return Column(
       spacing: 16.h,
@@ -23,7 +24,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           styleLabel: styleLabel,
           borderColor: ColorsName.paleBlue,
           fillColor: ColorsName.lightGray,
-          hintStyle: BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400),
+          hintStyle: hintStyle,
           hintText: 'Isikan Nomor KK',
         ),
         TextFieldComponent(
@@ -31,7 +32,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           styleLabel: styleLabel,
           borderColor: ColorsName.paleBlue,
           fillColor: ColorsName.lightGray,
-          hintStyle: BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400),
+          hintStyle: hintStyle,
           hintText: 'Masukkan Nama Lengkap',
         ),
         TextFieldComponent(
@@ -39,7 +40,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           styleLabel: styleLabel,
           borderColor: ColorsName.paleBlue,
           fillColor: ColorsName.lightGray,
-          hintStyle: BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400),
+          hintStyle: hintStyle,
           hintText: 'Isikan Sesuai KTP',
         ),
         CustomDropdown<String>(
@@ -47,6 +48,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           fillColor: fillColor,
           labelStyle: styleLabel,
           required: true,
+          styleTextHint: hintStyle,
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'RT',
@@ -64,6 +66,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           fillColor: fillColor,
           labelStyle: styleLabel,
           required: true,
+          styleTextHint: hintStyle,
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'RW',
@@ -81,7 +84,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           styleLabel: styleLabel,
           borderColor: ColorsName.paleBlue,
           fillColor: ColorsName.lightGray,
-          hintStyle: BaseText.slateGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w400),
+          hintStyle: hintStyle,
           hintText: 'dd/MM/YY',
         ),
         CustomDropdown<String>(
@@ -89,6 +92,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           fillColor: fillColor,
           labelStyle: styleLabel,
           required: true,
+          styleTextHint: hintStyle,
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'Tahun Priode',
