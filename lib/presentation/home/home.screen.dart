@@ -13,6 +13,7 @@ import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
