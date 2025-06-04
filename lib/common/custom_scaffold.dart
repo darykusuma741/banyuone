@@ -52,7 +52,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           PreferredSize(
             preferredSize: Size.fromHeight(2.0), // Ketebalan border
             child: Container(
-              // color: ColorsName.grayPale, // Warna border
+              color: Colors.grey.shade300, // Warna border
               height: divider ? 0.5 : 0.0, // Ketebalan border
             ),
           ),

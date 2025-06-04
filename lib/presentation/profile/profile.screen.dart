@@ -1,6 +1,9 @@
 import 'package:banyuone/common/custom_scaffold.dart';
 import 'package:banyuone/common/static/colors_name.dart';
+import 'package:banyuone/presentation/profile/form/profile.form.dart';
+import 'package:banyuone/presentation/profile/photo/profile.photo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
@@ -13,14 +16,21 @@ class ProfileScreen extends GetView<ProfileController> {
     return CustomScaffold(
       appBar: CustomAppBar(
         title: 'Profile',
-        // title: const Text('ProfileScreen'),
-        // centerTitle: true,
+        divider: false,
       ),
-      backgroundColor: ColorsName.iceBlue,
-      body: const Center(
-        child: Text(
-          'ProfileScreen is working',
-          style: TextStyle(fontSize: 16),
+      backgroundColor: ColorsName.white,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 40.h),
+              ProfilePhoto(),
+              SizedBox(height: 50.h),
+              ProfileForm(),
+            ],
+          ),
         ),
       ),
     );

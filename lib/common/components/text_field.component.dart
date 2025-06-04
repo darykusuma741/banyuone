@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TextFieldComponent extends StatelessWidget {
-  const TextFieldComponent({super.key, this.borderColor, this.fillColor, this.hintText, this.hintStyle});
+  const TextFieldComponent({super.key, this.borderColor, this.styleLabel, this.fillColor, this.hintText, this.hintStyle, this.label});
   final Color? borderColor;
   final Color? fillColor;
   final String? hintText;
+  final String? label;
   final TextStyle? hintStyle;
+  final TextStyle? styleLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +17,27 @@ class TextFieldComponent extends StatelessWidget {
     );
     border = borderColor == null ? null : border;
 
-    return TextField(
-      decoration: InputDecoration(
-        filled: true,
-        hintText: hintText,
-        hintStyle: hintStyle,
-        constraints: BoxConstraints(minHeight: 42.0),
-        contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
-        border: border,
-        enabledBorder: border,
-        errorBorder: border,
-        focusedBorder: border,
-        disabledBorder: border,
-        fillColor: fillColor,
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (label != null) Text(label!, style: styleLabel),
+        if (label != null) SizedBox(height: 8.0),
+        TextField(
+          decoration: InputDecoration(
+            filled: true,
+            hintText: hintText,
+            hintStyle: hintStyle,
+            constraints: BoxConstraints(minHeight: 42.0),
+            contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
+            border: border,
+            enabledBorder: border,
+            errorBorder: border,
+            focusedBorder: border,
+            disabledBorder: border,
+            fillColor: fillColor,
+          ),
+        ),
+      ],
     );
   }
 }

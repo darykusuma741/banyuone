@@ -9,4 +9,6 @@ class ColorsName {
   static const Color slateGray = Color(0xFF8391A1);
   static const Color iceBlue = Color(0xFFF6F8FF);
   static const Color mintGreen = Color(0xFF3CB38E);
+  static const Color pastelRed = Color(0xFFFFB5B5);
+  static const Color darkRed = Color(0xFF940909);
 }
