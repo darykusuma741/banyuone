@@ -21,7 +21,7 @@ class BansosMainController extends GetxController {
       }).toList();
       await bansosService.updateData(data);
     } catch (e) {
-      print(e); // test
+      print(e);
     }
   }
 
