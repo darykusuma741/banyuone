@@ -16,10 +16,10 @@ class InventoryItemMainController extends GetxController {
 
   Future updateData(InventoryItemModel data) async {
     try {
-      await inventoryItemService.updateData(data);
       listItem.value = listItem.value.map((e) {
         return (data.id == e.id) ? data : e;
       }).toList();
+      await inventoryItemService.updateData(data);
     } catch (e) {
       print(e);
     }
