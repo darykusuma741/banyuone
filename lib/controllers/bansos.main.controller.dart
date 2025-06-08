@@ -24,4 +24,13 @@ class BansosMainController extends GetxController {
       print(e);
     }
   }
+
+  Future saveData(BansosModel data) async {
+    try {
+      listItem.value = [data, ...listItem.value];
+      await bansosService.saveData(data);
+    } catch (e) {
+      print(e);
+    }
+  }
 }

@@ -11,7 +11,7 @@ class BansosModel extends BaseModel<BansosModel> {
   final String tahunPeriode;
 
   BansosModel({
-    required this.id,
+    this.id = 'Test',
     required this.nomorKk,
     required this.nama,
     required this.nik,

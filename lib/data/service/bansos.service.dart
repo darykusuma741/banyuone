@@ -15,4 +15,8 @@ class BansosService {
   Future updateData(BansosModel data) async {
     await FirebaseFirestore.instance.collection('usulanBansos').doc(data.id).update(data.toJson());
   }
+
+  Future saveData(BansosModel data) async {
+    await FirebaseFirestore.instance.collection('usulanBansos').add(data.toJson());
+  }
 }
