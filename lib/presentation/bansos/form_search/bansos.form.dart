@@ -28,7 +28,7 @@ class BansosForm extends GetView<BansosController> {
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'Tahun Priode',
-          items: ['2020', '2027'],
+          items: ['2024', '2025'],
           customContent: (p0) => p0 == null ? 'Pilih yang sesuai' : '$p0 ',
           onChanged: (value) {
             // controller.requestType.value = value;
@@ -46,7 +46,7 @@ class BansosForm extends GetView<BansosController> {
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'RT',
-          items: ['Barang1', 'Barang2'],
+          items: ['1', '2'],
           customContent: (p0) => p0 == null ? 'Pilih RT' : '$p0 ',
           onChanged: (value) {
             // controller.requestType.value = value;
@@ -64,7 +64,7 @@ class BansosForm extends GetView<BansosController> {
           // error: controller.requestTypeErr.value,
           // selectedItem: controller.requestType.value,
           label: 'RW',
-          items: ['Barang1', 'Barang2'],
+          items: ['1', '2'],
           customContent: (p0) => p0 == null ? 'Pilih RW' : '$p0 ',
           onChanged: (value) {
             // controller.requestType.value = value;
