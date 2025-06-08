@@ -97,7 +97,7 @@ class BansosRequestForm extends GetView<BansosRequestForm> {
           // selectedItem: controller.requestType.value,
           label: 'Tahun Priode',
           items: ['2021', '2022', '2023'],
-          customContent: (p0) => p0 == null ? 'Pilih RW' : '$p0 ',
+          customContent: (p0) => p0 == null ? 'Pilih Periode' : '$p0 ',
           onChanged: (value) {
             // controller.requestType.value = value;
             // controller.requestTypeErr.value = null;
