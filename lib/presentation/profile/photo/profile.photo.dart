@@ -20,7 +20,7 @@ class ProfilePhoto extends GetView<ProfileController> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(100.r),
             child: Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaBVyFTR9p4BplZaoRuKTeb8bI13JisF8k0Q&s',
+              'https://photosnow.net/wp-content/uploads/2024/04/no-dp-mood-off_9.jpg',
               fit: BoxFit.cover,
             ),
           ),
