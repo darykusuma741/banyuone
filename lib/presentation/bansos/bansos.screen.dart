@@ -1,6 +1,4 @@
-import 'package:banyuone/common/components/button.component.dart';
 import 'package:banyuone/common/custom_scaffold.dart';
-import 'package:banyuone/common/static/base_text.dart';
 import 'package:banyuone/common/static/colors_name.dart';
 import 'package:banyuone/infrastructure/navigation/routes.dart';
 import 'package:banyuone/presentation/bansos/form_search/bansos.form.dart';
@@ -32,12 +30,12 @@ class BansosScreen extends GetView<BansosController> {
           children: [
             BansosForm(),
             SizedBox(),
-            ButtonComponent(
-              title: 'Cari',
-              bgColor: ColorsName.darkBlueGray,
-              style: BaseText.white.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500),
-              onTap: controller.onHandleSearch,
-            ),
+            // ButtonComponent(
+            //   title: 'Cari',
+            //   bgColor: ColorsName.darkBlueGray,
+            //   style: BaseText.white.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500),
+            //   onTap: controller.onHandleSearch,
+            // ),
             BansosResultSearch(),
           ],
         ),
