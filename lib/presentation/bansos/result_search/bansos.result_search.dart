@@ -1,5 +1,6 @@
 import 'package:banyuone/common/static/base_text.dart';
 import 'package:banyuone/common/static/colors_name.dart';
+import 'package:banyuone/data/model/bansos.model.dart';
 import 'package:banyuone/presentation/bansos/controllers/bansos.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,32 +11,33 @@ class BansosResultSearch extends GetView<BansosController> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Hasil pencarian',
-          style: BaseText.darkBlueGray.copyWith(fontSize: 14.sp, fontStyle: FontStyle.italic, fontWeight: FontWeight.w300),
-        ),
-        SizedBox(height: 15.0),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 15.h,
-          children: [
-            BansosResultSearchItem(),
-            BansosResultSearchItem(),
-            BansosResultSearchItem(),
-            BansosResultSearchItem(),
-            BansosResultSearchItem(),
-          ],
-        )
-      ],
-    );
+    return Obx(() {
+      final data = controller.data.value;
+
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Hasil pencarian',
+            style: BaseText.darkBlueGray.copyWith(fontSize: 14.sp, fontStyle: FontStyle.italic, fontWeight: FontWeight.w300),
+          ),
+          SizedBox(height: 15.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 15.h,
+            children: data.map((e) {
+              return BansosResultSearchItem(e);
+            }).toList(),
+          )
+        ],
+      );
+    });
   }
 }
 
 class BansosResultSearchItem extends StatelessWidget {
-  const BansosResultSearchItem({super.key});
+  const BansosResultSearchItem(this.e, {super.key});
+  final BansosModel e;
 
   @override
   Widget build(BuildContext context) {
@@ -62,11 +64,11 @@ class BansosResultSearchItem extends StatelessWidget {
             children: [
               Text('Nama', style: BaseText.darkBlueGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600)),
               SizedBox(height: 2.h),
-              Text('Justin Suryo', style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
+              Text(e.nama, style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
               SizedBox(height: 10.h),
               Text('NIK', style: BaseText.darkBlueGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600)),
               SizedBox(height: 2.h),
-              Text('9274728192001', style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
+              Text(e.nik, style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
             ],
           ),
           SizedBox(
@@ -74,13 +76,13 @@ class BansosResultSearchItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Umur', style: BaseText.darkBlueGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600)),
+                Text('RT/RW', style: BaseText.darkBlueGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600)),
                 SizedBox(height: 2.h),
-                Text('29 Tahun', style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
+                Text('${e.rt}/${e.rw}', style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
                 SizedBox(height: 10.h),
                 Text('Priode', style: BaseText.darkBlueGray.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600)),
                 SizedBox(height: 2.h),
-                Text('2029', style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
+                Text(e.tahunPeriode, style: BaseText.darkBlueGray.copyWith(fontSize: 13.sp)),
               ],
             ),
           ),

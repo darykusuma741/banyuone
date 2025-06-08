@@ -13,6 +13,6 @@ class InventoryItemService {
   }
 
   Future updateData(InventoryItemModel data) async {
-    await FirebaseFirestore.instance.collection('inventoryItem').doc(data.id).set(data.toJson());
+    await FirebaseFirestore.instance.collection('inventoryItem').doc(data.id).update(data.toJson());
   }
 }
